@@ -124,7 +124,7 @@ Mặc dù có vẻ tự nhiên khi Network Function Virtualization xuất hiện
 
 Theo truyền thống, doanh nghiệp viễn thông nhấn mạnh sự cần thiết cho cơ sở hạ tầng “nhà cung cấp dịch vụ”, đòi hỏi độ tin cậy rất cao đối với từng thành phần cơ sở hạ tầng. Một trong những nguyên lý kiến trúc của nền tảng cloud (bao gồm OpenStack) là cả khả năng mở rộng và độ tin cậy đều đạt được thông qua quy mô lớn. Đây là một cách tiếp cận mới cho nhiều doanh nghiệp viễn thông ở chỗ nó đẩy nhiều yêu cầu HA lên đến ứng dụng. Trong môi trường cloud, một máy chủ cá nhân không thể tự cung cấp “five nines” thời gian hoạt động, nhưng một ứng dụng có nhiều phiên bản trên nhiều máy chủ trong một cloud phân tán. Nhận ra rằng những thất bại nhất định xảy ra, NFV trên OpenStack phải tập trung vào giám sát khả năng phục hồi, phát hiện lỗi và phản hồi.
 
-Cells (groups of hosts)  quản lý thành phần Nova. Cell phép triển khai các OpenStack cloud lớn hơn bằng cách cung cấp một cách để nhóm các tài nguyên lại với nhau để được quản lý dễ dàng hơn. Quản trị viên có thể phân vùng tài nguyên hiện có thành các cell và hệ thống sẽ biết nơi tìm chúng.
+Cells (groups of hosts)  quản lý thành phần Nova. Cell cho phép triển khai các OpenStack cloud lớn hơn bằng cách cung cấp một cách để nhóm các tài nguyên lại với nhau để được quản lý dễ dàng hơn. Quản trị viên có thể phân vùng tài nguyên hiện có thành các cell và hệ thống sẽ biết nơi tìm chúng.
 
 OpenStack tiếp tục kết hợp tính khả dụng cao và khả năng phục hồi trong mọi bản phát hành. Gần đây nhất, bản phát hành Liberty bao gồm các ví dụ cụ thể về mạng này:
 
