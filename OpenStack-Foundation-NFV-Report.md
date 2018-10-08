@@ -4,8 +4,7 @@
 
 ### Tổng quan
 
-Đắt đỏ, độc quyền không linh hoạt. Đây là một số nhà lãnh đạo kinh doanh trải nghiệm với mạng truyền thống và điều gì đã thúc đẩy liên kết mạng các nhà khai thác mạng để phát triển một cái gì đó mới. Network Functions Virtualization (NFV) cho phép
-các nhà khai thác mạng viễn thông và doanh nghiệp để kiểm soát các chức năng mạng của họ, Network Functions Virtualization (NFV) — sử dụng phần cứng thương mại có sẵn và phần mềm mã nguồn mở như một bảng điều khiển duy nhất để quản lý và phối hợp. 
+Đắt đỏ, độc quyền không linh hoạt. Đây là một số ý kiến của các nhà lãnh đạo kinh doanh trải nghiệm với mạng truyền thống và điều gì đã thúc đẩy liên kết các nhà khai thác mạng để phát triển một cái gì đó mới. Network Functions Virtualization (NFV) cho phép các nhà khai thác mạng viễn thông và doanh nghiệp kiểm soát các chức năng mạng của họ, Network Functions Virtualization (NFV) — sử dụng phần cứng thương mại có sẵn và phần mềm mã nguồn mở như một bảng điều khiển duy nhất để quản lý và phối hợp. 
 
 Ban đầu, các công ty viễn thông và nhà cung cấp mạng đã nhận ra tiềm năng cho OpenStack làm nền tảng cho NFV, vì vậy họ bắt đầu làm việc với các nhà cung cấp và các nhà phát triển trong cộng đồng OpenStack để tối ưu hóa phần mềm OpenStack cho trường hợp sử dụng NFV.
 
@@ -37,7 +36,7 @@ Lợi ích của NFV xuất phát từ thực tế là nó chạy trên các má
 
 + Dựa vào tốc độ phát triển của mã nguồn mở những cải tiến chưa từng có trong cả lĩnh vực viễn thông và IT.
 
-+ Nhiều lựa chọn khả năng điều kiển và plugin hỗ trợ
++ Nhiều lựa chọn khả năng điều kiển và plugin hỗ trợ.
 
 + Khả năng truy cập thông qua API, cho phép thời gian giải quyết nhanh hơn.
 
@@ -55,7 +54,7 @@ Lợi ích của NFV xuất phát từ thực tế là nó chạy trên các má
 
 + Qos: Hiệu suất, khả năng mở rộng, tích hợp, quản lý.
 
-+ Chính sách dự phòng
++ Chính sách dự phòng.
 
 + Hỗ trợ cơ sở hạ tầng ở mức ứng dụng.
 
@@ -103,7 +102,7 @@ Trong ETSI NFV và OPNFV, OpenStack là nền tảng cho trình quản lý cơ s
 
 + OpenStack Compute (code named Nova) để quản lý các máy chủ ảo. Một dự án — Magnum — sử dụng các Nova VM để chạy các containers ứng dụng.
 
-+ OpenStack Block Storage (code named Cinder) cho lưu trữ ảo, hỗ trợ  bất kỳ lưu trữ backend.
++ OpenStack Block Storage (code named Cinder) cho lưu trữ ảo, hỗ trợ bất kỳ lưu trữ backend.
 
 + OpenStack Networking (code named Neutron) cung cấp mạng ảo.
 
@@ -115,9 +114,48 @@ OpenStack đã liên tục cải tiến về hiệu suất, khả năng mở r�
 
 Yêu cầu về hiệu năng phần lớn là xử lý gói hiệu năng cao: cách lấy gói tin ra khỏi mạng,đi vào máy ảo, xử lý nhanh và đi ra ngoài mạng. Một trong những kỹ thuật có sẵn là cung cấp cho máy ảo truy cập trực tiếp vào mạng thông qua SR-IOV. OpenvSwitch tăng tốc DPDK để xử lý gói nhanh và người dùng vhost nhiều hàng đợi với các chuyển mạch ảo tăng tốc cũng được hỗ trợ trong Neutron.
  
- Một loạt các cải tiến liên quan cho phép các nhà khai thác mạng xác định các flavors và chủ sở hữu ứng dụng để xác định các thuộc tính hình ảnh, giữa chúng kiểm soát những thứ như vCPU topology, vCPU, pCPU , vị trí ứng dụng liên quan đến NUMA nodes và làm cho các trang lớn có sẵn cho các ứng dụng .
+Một loạt các cải tiến liên quan cho phép các nhà khai thác mạng xác định các flavors và chủ sở hữu ứng dụng để xác định các thuộc tính hình ảnh, giữa chúng kiểm soát những thứ như vCPU topology, vCPU, pCPU , vị trí ứng dụng liên quan đến NUMA nodes và làm cho các trang lớn có sẵn cho các ứng dụng .
 
-Trong tương lai, chúng ta có thể mong đợi sự hỗ trợ thời gian thực cho  Cloud Radio Access Networks  và điều chỉnh hiệu năng hơn nữa của hypervisor và mạng (tương ứng với Nova và Neutron) cũng như cấu guest. https://wiki.openstack.org/wiki/VirtDriverGuestCPUMemoryPlacement liệt kê những điều quan trọng có thể giúp tối ưu hóa hiệu suất.
+Trong tương lai, chúng ta có thể mong đợi sự hỗ trợ thời gian thực cho Cloud Radio Access Networks và điều chỉnh hiệu năng hơn nữa của hypervisor và mạng (tương ứng với Nova và Neutron) cũng như cấu guest. https://wiki.openstack.org/wiki/VirtDriverGuestCPUMemoryPlacement liệt kê những điều quan trọng có thể giúp tối ưu hóa hiệu suất.
+
+Mặc dù có vẻ tự nhiên khi Network Function Virtualization xuất hiện dưới sự kết nối mạng, phần lớn công việc liên quan đến Nova. Nova quản lý vòng đời của các VM tính toán trong môi trường OpenStack. Trách nhiệm bao gồm khởi tạo, lên lịch và ngừng hoạt động của các máy theo yêu cầu. Hầu hết Nova đều liên quan đến các trường hợp sử dụng NFV. Ví dụ, lịch trình là rất quan trọng cho hiệu suất và khả năng phục hồi. Nó phải khởi động các phiên bản mới nhanh chóng, cả ban đầu và đặc biệt là trong phản ứng phát hiện lỗi.
+
+### Scalability, High Availability  and Resiliency
+
+Theo truyền thống, doanh nghiệp viễn thông nhấn mạnh sự cần thiết cho cơ sở hạ tầng “nhà cung cấp dịch vụ”, đòi hỏi độ tin cậy rất cao đối với từng thành phần cơ sở hạ tầng. Một trong những nguyên lý kiến trúc của nền tảng cloud (bao gồm OpenStack) là cả khả năng mở rộng và độ tin cậy đều đạt được thông qua quy mô lớn. Đây là một cách tiếp cận mới cho nhiều doanh nghiệp viễn thông ở chỗ nó đẩy nhiều yêu cầu HA lên đến ứng dụng. Trong môi trường cloud, một máy chủ cá nhân không thể tự cung cấp “five nines” thời gian hoạt động, nhưng một ứng dụng có nhiều phiên bản trên nhiều máy chủ trong một cloud phân tán. Nhận ra rằng những thất bại nhất định xảy ra, NFV trên OpenStack phải tập trung vào giám sát khả năng phục hồi, phát hiện lỗi và phản hồi.
+
+Cells (groups of hosts)  quản lý thành phần Nova. Cell phép triển khai các OpenStack cloud lớn hơn bằng cách cung cấp một cách để nhóm các tài nguyên lại với nhau để được quản lý dễ dàng hơn. Quản trị viên có thể phân vùng tài nguyên hiện có thành các cell và hệ thống sẽ biết nơi tìm chúng.
+
+OpenStack tiếp tục kết hợp tính khả dụng cao và khả năng phục hồi trong mọi bản phát hành. Gần đây nhất, bản phát hành Liberty bao gồm các ví dụ cụ thể về mạng này:
+
++ Tính sẵn sàng cao của bộ định tuyến (L3 HA/VRRP) khi kích hoạt lớp 2 (l2pop)
+
++ Trình điều khiển tham chiếu VPNaaS với bộ định tuyến HA
+
++ Các mạng được sử dụng cho lưu lượng VRRP cho các bộ định tuyến HA có thể được cấu hình để sử dụng một loại segmentation cụ thể hoặc physical network tag.
+
++ Có thể khởi động lại OVS agent mà không ảnh hưởng đến kết nối dữ liệu.
+
++ Cảnh báo sự kiện kích hoạt một hành động khi một sự kiện được nhận.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
