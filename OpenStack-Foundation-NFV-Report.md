@@ -215,7 +215,7 @@ Dự án OpenStack Tacker đề cập đến NFVO và VNFM. Tacker đang xây d�
 
 Tacker có nhiều người ủng hộ và phát triển trong cộng đồng OPNFV và được dự đoán là một lựa chọn trong một bản phát hành OPNFV trong tương lai. Mặc dù không có kế hoạch dứt khoát vào thời điểm này, PTL Tacker nói “bản phát hành C của OPNFV có thể tích hợp độc đáo với bản phát hành OpenStack Mitaka của Tacker.” Có một số video trình diễn Tacker kỹ thuật từ Hội nghị thượng đỉnh OPNFV tháng 11 năm 2015.
 
-Video : https://www.youtube.com/ watch?v=EfqWArz25Hg
+Video : https://www.youtube.com/watch?v=EfqWArz25Hg
 
 Chi tiết: https://wiki.openstack.org/wiki/Tacker
 
@@ -235,7 +235,7 @@ Wiki: https://wiki.openstack.org/wiki/Blazar
 
 **Mistral:** Workflow service Cho phép mô tả các quy trình nghiệp vụ phức tạp (quy trình công việc) như một tập hợp các nhiệm vụ và các mối quan hệ công việc, chẳng hạn Mistral quản lý trạng thái quản lý, thứ tự thực hiện đúng, song song, đồng bộ hóa và tính sẵn sàng cao. Mistral cũng cung cấp tính năng lập lịch nhiệm vụ linh hoạt
 
-Wiki: https://wiki.openstack. org/wiki/Mistral.
+Wiki: https://wiki.openstack.org/wiki/Mistral.
 
 **Neutron:** Dự án OpenStack cung cấp “kết nối mạng như một dịch vụ” giữa các thiết bị giao diện (ví dụ: vNICs) được quản lý bởi các dịch vụ Openstack khác (ví dụ: Nova). Neutron cung cấp sự linh hoạt và lựa chọn với trình điều khiển và plug-in từ nhiều nhà cung cấp viễn thông hàng đầu để người dùng không phải lo lắng về việc thay đổi API hoặc sửa đổi mã nếu họ quyết định chuyển đổi công nghệ triển khai cơ bản. Bài viết này bao gồm các tính năng Neutron cho hiệu năng NFV (ở trên). 88% người dùng OpenStack đã triển khai Neutron.
 
@@ -247,7 +247,7 @@ http://governance.openstack.org/reference/projects/neutron.html.
 
 **Senlin:** Một dịch vụ phân cụm và các thư viện để quản lý các nhóm đối tượng đồng nhất được tiếp xúc bởi các dịch vụ OpenStack khác
 
-Wiki: https://wiki. openstack.org/wiki/Senlin.
+Wiki: https://wiki.openstack.org/wiki/Senlin.
 
 
 
