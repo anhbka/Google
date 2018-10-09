@@ -122,9 +122,9 @@ Mặc dù có vẻ tự nhiên khi Network Function Virtualization xuất hiện
 
 ### Scalability, High Availability  and Resiliency
 
-Theo truyền thống, doanh nghiệp viễn thông nhấn mạnh sự cần thiết cho cơ sở hạ tầng “nhà cung cấp dịch vụ”, đòi hỏi độ tin cậy rất cao đối với từng thành phần cơ sở hạ tầng. Một trong những nguyên lý kiến trúc của nền tảng cloud (bao gồm OpenStack) là cả khả năng mở rộng và độ tin cậy đều đạt được thông qua quy mô lớn. Đây là một cách tiếp cận mới cho nhiều doanh nghiệp viễn thông ở chỗ nó đẩy nhiều yêu cầu HA lên đến ứng dụng. Trong môi trường cloud, một máy chủ cá nhân không thể tự cung cấp “five nines” thời gian hoạt động, nhưng một ứng dụng có nhiều phiên bản trên nhiều máy chủ trong một cloud phân tán. Nhận ra rằng những thất bại nhất định xảy ra, NFV trên OpenStack phải tập trung vào giám sát khả năng phục hồi, phát hiện lỗi và phản hồi.
+Theo truyền thống, doanh nghiệp viễn thông nhấn mạnh sự cần thiết của cơ sở hạ tầng “nhà cung cấp dịch vụ”, đòi hỏi độ tin cậy rất cao đối với từng thành phần cơ sở hạ tầng. Một trong những nguyên lý kiến trúc của nền tảng cloud (bao gồm OpenStack) là cả khả năng mở rộng và độ tin cậy đều đạt được thông qua quy mô lớn. Đây là một cách tiếp cận mới cho nhiều doanh nghiệp viễn thông ở chỗ nó đẩy nhiều yêu cầu HA lên đến ứng dụng. Trong môi trường cloud, một máy chủ cá nhân không thể tự cung cấp “five nines” thời gian hoạt động, nhưng một ứng dụng có nhiều phiên bản trên nhiều máy chủ trong một cloud phân tán. Nhận ra rằng những thất bại nhất định xảy ra, NFV trên OpenStack phải tập trung vào giám sát khả năng phục hồi, phát hiện lỗi và phản hồi.
 
-Cells (groups of hosts)  quản lý thành phần Nova. Cell cho phép triển khai các OpenStack cloud lớn hơn bằng cách cung cấp một cách để nhóm các tài nguyên lại với nhau để được quản lý dễ dàng hơn. Quản trị viên có thể phân vùng tài nguyên hiện có thành các cell và hệ thống sẽ biết nơi tìm chúng.
+Cells (groups of hosts) quản lý thành phần Nova. Cell cho phép triển khai các OpenStack cloud lớn hơn bằng cách cung cấp một cách để nhóm các tài nguyên lại với nhau để được quản lý dễ dàng hơn. Quản trị viên có thể phân vùng tài nguyên hiện có thành các cell và hệ thống sẽ biết nơi tìm chúng.
 
 OpenStack tiếp tục kết hợp tính khả dụng cao và khả năng phục hồi trong mọi bản phát hành. Gần đây nhất, bản phát hành Liberty bao gồm các ví dụ cụ thể về mạng này:
 
@@ -136,24 +136,118 @@ OpenStack tiếp tục kết hợp tính khả dụng cao và khả năng phục
 
 + Có thể khởi động lại OVS agent mà không ảnh hưởng đến kết nối dữ liệu.
 
-+ Cảnh báo sự kiện kích hoạt một hành động khi một sự kiện được nhận.
++ Cảnh báo sự kiện kích hoạt một hành động khi một sự kiện nhận được.
+
+Nhưng những cải tiến này có thể không đảm bảo với mọi công ty đang quan tâm tới NFV trên OpenStack. Một quan điểm độc lập về vai trò của OpenStack trong tính khả dụng của NFV, có tên là “NFV của nhà cung cấp thực sự quan trọng?” Để giải quyết vấn đề, và người dùng phải cài đặt HA với các thành phần dự phòng và VNF, và tăng cường nền tảng để duy trì trạng thái trong quá trình có lỗi xảy ra. Tác giả, Tom Nolle, Chủ tịch CIMI Corp, kết luận rằng OpenStack thực hiện chính xác những gì họ yêu cầu, nhưng các nhà phát triển VNF cần xây dựng HA vào VNF của họ - cũng giống như các nhà phát triển nhận thức về cloud xây dựng HA vào ứng dụng của họ. Có một ví dụ điển hình về điều này trong Dự án Clearwater. Clearwater là một triển khai mã nguồn mở của IMS (Hệ thống con đa phương tiện IP) được thiết kế để triển khai có thể mở rộng theo quy mô lớn trên đám mây. Clearwater là sự kết hợp kinh tế của các nền tảng dịch vụ đỉnh cao với các tiêu chuẩn tuân thủ tiêu chuẩn của các giải pháp mạng truyền thông cấp viễn thông, và thiết kế hướng cloud của nó rất phù hợp để triển khai trong môi trường NFV.
+
+Khả năng tự khôi phục được thực hiện theo nhiều cách khác. Bloomberg, một nhà điều hành mạng lớn và người dùng OpenStack NFV, đang chuyển từ trạng thái đồng bộ sang các chức năng ít độc lập và tự chủ hơn trên nhiều máy tính, để truyền bá khả năng tự khôi phục trong môi trường. Họ đang triển khai nhiều tường firewall và load balancer VNFs như trái ngược với những cái nhỏ hơn. Điều này cung cấp SLA tốt hơn ở cấp độ cao hơn. Sự cân bằng là quản lý nhiều hệ thống hơn nhưng cách tiếp cận làm giảm rủi ro.
+
+Đối với nền tảng OPNFV, Doctor là quản lý dự án và bảo trì lỗi. Mục tiêu của Doctor là xây dựng một khung quản lý và bảo trì lỗi cho tính sẵn sàng cao của các dịch vụ mạng trên cơ sở hạ tầng ảo hóa. Tính năng chính là thông báo ngay lập tức về việc không có tài nguyên ảo hóa từ VIM, để xử lý khôi phục các VNF trên chúng.
+
+Cộng đồng Doctor có ảnh hưởng đến nhiệm vụ này chủ yếu trong dự án Monasca của OpenStack— phản ánh cách tiếp cận “upstream first” của OPNFV. Monasca là một giải pháp Giám sát dung lượng cao, có khả năng mở rộng, đáng tin cậy và có khả năng chịu lỗi cao như một giải pháp Dịch vụ (MONaaS) có quy mô đến mức cung cấp thông số của nhà cung cấp dịch vụ. Hiệu suất, khả năng mở rộng và tính khả dụng cao đã được thiết kế ngay từ đầu.
+
+Monasca có thể xử lý hàng trăm nghìn chỉ số/giây và có thể cung cấp thời gian lưu giữ dữ liệu lớn hơn một năm mà không mất dữ liệu trong khi vẫn xử lý các truy vấn tương tác. Các tính năng chính khác bao gồm:
+
++ REST API  lưu trữ và truy vấn chỉ số và thông tin lịch sử. Hầu hết các giải pháp giám sát đều sử dụng các giao thức và giao thức đặc biệt, chẳng hạn như CollectD hoặc NSCA (Nagios). Ở Monasca, http là giao thức duy nhất được sử dụng. Điều này đơn giản hóa thiết kế tổng thể và cũng cho phép một cách phong phú hơn nhiều để mô tả dữ liệu thông qua các tham số.
+
++ Đa nhiệm và được xác thực
+
++ Số liệu được xác định bằng cách sử dụng một cặp (key, value) được gọi là thứ nguyên.
+
++ Cảnh báo theo thời gian thực (single and compound alarm) về dữ liệu hệ thống.
+
++ Giám sát agent hỗ trợ tích hợp hệ thống và dịch vụ kiểm tra và Nagios.
+
+### Multisite
+
+Dịch vụ viễn thông đòi hỏi một cơ sở hạ tầng NFV phân phối trên nhiều khu vực khác nhau. Nền tảng phải có khả năng hỗ trợ dự phòng cấp ứng dụng trên các trung tâm dữ liệu khác nhau, quản lý mạng trên nhiều trang web và giữa cơ sở hạ tầng vật lý và ảo, sao chép hình ảnh nhiều trang và quản lý hạn ngạch toàn cầu và trên mỗi trang.
+
+Nhiều triển khai OpenStack được kết nối như VIM và tính khả dụng cao trong số đó là bắt buộc đối với cơ sở hạ tầng NFV phân bố ở nhiều khu vực. Dự án Cơ sở hạ tầng ảo hóa đa phương tiện OPNFV tập trung vào các cải tiến cho các dự án OpenStack Nova, Cinder, Neutron, Glance (Image), Ceilometer (Telemetry) và Keystone (Identity), do đó OpenStack là VIM có thể hỗ trợ multi-site NFV clouds . Tìm hiểu thêm về dự án MultNFV Multisite tại https://wiki.opnfv.org/multisite.
+
+"Trong các trung tâm dữ liệu hiện tại, việc triển khai một chuỗi dịch vụ là thông qua các cấu hình tĩnh, phức tạp và cứng nhắc vì chúng được kết hợp chặt chẽ với cấu trúc liên kết mạng vật lý và tài nguyên vật lý."
+
+### Service Function Chaining 
+
+Service Function Chaining (SFC) là một cơ chế để chuyển tiếp dựa trên điểm đến cơ bản điển hình của mạng IP. Một ví dụ đơn giản của một chuỗi dịch vụ sẽ là bắt buộc tất cả lưu lượng từ điểm A đến điểm B để đi qua firewall mặc dù firewall không theo nghĩa đen giữa điểm A và B từ bảng định tuyến. Một ví dụ phức tạp hơn là một loạt các hàm được sắp xếp, mỗi hàm được thực hiện trong nhiều máy ảo, như lưu lượng phải qua một máy ảo tại mỗi hop trong chuỗi nhưng sử dụng thuật toán băm để phân phối các luồng khác nhau trên nhiều máy ảo tại mỗi hop.
+
+Trong các trung tâm dữ liệu hiện tại, việc triển khai một chuỗi dịch vụ là thông qua các cấu hình tĩnh, phức tạp và cứng nhắc vì chúng được kết hợp chặt chẽ với cấu trúc liên kết mạng vật lý và tài nguyên vật lý. Việc giới thiệu các dịch vụ mới vào một mạng thường đòi hỏi phải cấu hình lại hầu hết các phần tử mạng (nếu không phải tất cả). Chuỗi vật lý phải được định nghĩa lại cho NFV với thiết lập tự động theo các yêu cầu về chuỗi dịch vụ. Mở rộng quy mô mạng của các chức năng dịch vụ này để xử lý tải bổ sung hoặc mở rộng quy mô để giảm sử dụng tài nguyên là một phần không thể tách rời của giải pháp SFC.
+
+Trong OpenStack, có hai bước trong việc tạo ra một chuỗi dịch vụ. Đầu tiên, các máy ảo dịch vụ, chẳng hạn như các máy ảo tường lửa, cần được tạo và kết nối với một mạng Neutron qua các cổng Neutron. Sau đó, các luồng lưu lượng được chọn cần được điều khiển thông qua một chuỗi thứ tự của các cổng VM dịch vụ này.
+
+Trước khi OpenStack phát hành Liberty OpenStack đã hỗ trợ tạo các máy ảo dịch vụ và đính kèm các máy ảo dịch vụ này vào các cổng mạng Neutron. Trong bản phát hành Liberty, Neutron đã được mở rộng với dự án Sfc của dự án SFC. Các tính năng của networkingsfc là:
+
++ Tạo các chuỗi chức năng dịch vụ bao gồm chuỗi thứ tự các chức năng dịch vụ. SFs là các máy ảo (hoặc các thiết bị vật lý ) thực hiện chức năng mạng như firewall, bộ nhớ cache , kiểm tra gói hoặc bất kỳ chức năng nào khác yêu cầu xử lý các gói trong flow từ điểm A đến điểm B
+
++ Thực hiện với Open vSwitch
+
++ Cơ chế phân loại lưu lượng (khả năng lựa chọn và hành động về traffic)
+
++ API của nhà cung cấp
+
++ Kiến trúc trình điều khiển plugin.
+
+Chi tiết tại :http://docs.openstack.org/developer/networking-sfc/
+
+### Addressing the Rest of MANO:  NFVO and VNFM
+
+Vào tháng 12 năm 2015, OPNFV đã chọn mở rộng phạm vi các dự án khi cần thiết để tạo thuận lợi cho việc triển khai NFV. Ví dụ, cộng đồng bây giờ sẽ phát triển và đề xuất các dự án về các chủ đề bổ sung, bao gồm MANO (“heart and brains” của NFV). Ngoài VIM, được đề cập trước đó, NFV MANO bao gồm:
 
 
+OpenStack Tacker addresses ETSI NFV MANO NFVO and VNFM functions
 
+<img src="/img/11.jpg">
 
+**NFV Orchestrator:** Chịu trách nhiệm đưa vào các gói dịch vụ mạng mới (NS) và các chức năng mạng ảo (VNF); NS quản lý vòng đời, quản lý tài nguyên toàn cầu, xác nhận và ủy quyền các yêu cầu tài nguyên cơ sở hạ tầng ảo hóa các chức năng mạng (NFVI).
 
+**VNF Manager:** Giám sát việc quản lý vòng đời của các trường hợp VNF, vai trò phối hợp và thích ứng cho báo cáo cấu hình và sự kiện giữa NFVI và E/NMS (hệ thống quản lý phần tử hoặc mạng).
 
+Dự án OpenStack Tacker đề cập đến NFVO và VNFM. Tacker đang xây dựng một Open NFV Orchestrator với một mục đích chung tích hợp VNF Manager để triển khai và vận hành các chức năng mạng ảo (VNFs), với Service Function Chaining. Nó dựa trên Khung Kiến trúc ETSI MANO và cung cấp một chồng chức năng đầy đủ để phối hợp các giao diện cuối cùng của VNF (Hình 5). Tacker cung cấp một danh mục VNF cho các mô tả VNF trên (được viết bằng các tiêu chuẩn NFV của OASIS TOSCA) và cung cấp các API để quản lý vòng đời của VNF cùng với các khả năng như giám sát VNF, tự động mở rộng quy mô và tự khôi phục. Tacker có kế hoạch mở rộng sang các khả năng của NFVO như các bộ mô tả dịch vụ mạng (NSD) và bộ mô tả đồ thị chuyển tiếp (VNFFGD) trong các chu kỳ sắp tới. Tacker sử dụng OpenStack Compute (Nova), Neutron và Heat để thực hiện vòng đời của VNF
 
+"Triển khai OpenStack NFV là xu thế của tương lai"
 
++ API Tacker triển khai VNF từ VNF Catalog 
 
++ Khởi tạo một hoặc nhiều máy ảo được mô tả trong mẫu TOSCA NFV
 
++ Tacker tạo điều kiện cho việc cấu hình injection  VNF và cung cấp một khuôn khổ có thể xem để theo dõi và hồi phục KPI
 
++ Chấm dứt VNF sẽ xóa tất cả các máy ảo và các tài nguyên khác liên quan đến VNF instance.
 
+Tacker có nhiều người ủng hộ và phát triển trong cộng đồng OPNFV và được dự đoán là một lựa chọn trong một bản phát hành OPNFV trong tương lai. Mặc dù không có kế hoạch dứt khoát vào thời điểm này, PTL Tacker nói “bản phát hành C của OPNFV có thể tích hợp độc đáo với bản phát hành OpenStack Mitaka của Tacker.” Có một số video trình diễn Tacker kỹ thuật từ Hội nghị thượng đỉnh OPNFV tháng 11 năm 2015.
 
+Video : https://www.youtube.com/ watch?v=EfqWArz25Hg
 
+Chi tiết: https://wiki.openstack.org/wiki/Tacker
 
+### Other Key OpenStack Projects
 
+Một số dự án OpenStack bổ sung hỗ trợ triển khai NFV.
 
+**Astara:** Cung cấp khả năng tích hợp điều phối dịch vụ mạng  (routing, firewall, load balancing, VPN) để kết nối và bảo vệ môi trường OpenStack đa nhiệm.
+
+Wiki: https://wiki.openstack.org/wiki/Astara
+
+**Blazar (previously Climate):** Reservationas-a-Service, bao gồm thiết lập tài nguyên, cập nhật thiết lập và "give me an offer”/best effort reservation và lập lịch trình đặt chỗ. Cung cấp giải pháp cho các yêu cầu từ dự án PromNFV Promise.
+
+Wiki: https://wiki.openstack.org/wiki/Blazar
+
+**Congress:** Chính sách như một dịch vụ. Cung cấp quản trị như một dịch vụ trên bất kỳ collection of cloud services để theo dõi, thực thi và kiểm toán chính sách về cơ sở hạ tầng động.
+
+**Mistral:** Workflow service Cho phép mô tả các quy trình nghiệp vụ phức tạp (quy trình công việc) như một tập hợp các nhiệm vụ và các mối quan hệ công việc, chẳng hạn Mistral quản lý trạng thái quản lý, thứ tự thực hiện đúng, song song, đồng bộ hóa và tính sẵn sàng cao. Mistral cũng cung cấp tính năng lập lịch nhiệm vụ linh hoạt
+
+Wiki: https://wiki.openstack. org/wiki/Mistral.
+
+**Neutron:** Dự án OpenStack cung cấp “kết nối mạng như một dịch vụ” giữa các thiết bị giao diện (ví dụ: vNICs) được quản lý bởi các dịch vụ Openstack khác (ví dụ: Nova). Neutron cung cấp sự linh hoạt và lựa chọn với trình điều khiển và plug-in từ nhiều nhà cung cấp viễn thông hàng đầu để người dùng không phải lo lắng về việc thay đổi API hoặc sửa đổi mã nếu họ quyết định chuyển đổi công nghệ triển khai cơ bản. Bài viết này bao gồm các tính năng Neutron cho hiệu năng NFV (ở trên). 88% người dùng OpenStack đã triển khai Neutron.
+
+Visit http://docs.openstack.org/developer/neutron/
+
+** Neutron “Stadium” subprojects: **Một tập hợp các dự án Neutron chính thức, Stadium bao gồm nhiều dự án liên quan đến NFV và duy trì hỗ trợ cho hầu hết các drivers và plug-ins.
+
+http://governance.openstack.org/reference/projects/neutron.html.
+
+**Senlin:** Một dịch vụ phân cụm và các thư viện để quản lý các nhóm đối tượng đồng nhất được tiếp xúc bởi các dịch vụ OpenStack khác
+
+Wiki: https://wiki. openstack.org/wiki/Senlin.
 
 
 
