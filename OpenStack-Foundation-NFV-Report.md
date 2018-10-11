@@ -235,19 +235,58 @@ Wiki: https://wiki.openstack.org/wiki/Blazar
 
 **Mistral:** Workflow service Cho phép mô tả các quy trình nghiệp vụ phức tạp (quy trình công việc) như một tập hợp các nhiệm vụ và các mối quan hệ công việc, chẳng hạn Mistral quản lý trạng thái quản lý, thứ tự thực hiện đúng, song song, đồng bộ hóa và tính sẵn sàng cao. Mistral cũng cung cấp tính năng lập lịch nhiệm vụ linh hoạt
 
-Wiki: https://wiki.openstack.org/wiki/Mistral.
+Wiki: https://wiki.openstack.org/wiki/Mistral
 
 **Neutron:** Dự án OpenStack cung cấp “kết nối mạng như một dịch vụ” giữa các thiết bị giao diện (ví dụ: vNICs) được quản lý bởi các dịch vụ Openstack khác (ví dụ: Nova). Neutron cung cấp sự linh hoạt và lựa chọn với trình điều khiển và plug-in từ nhiều nhà cung cấp viễn thông hàng đầu để người dùng không phải lo lắng về việc thay đổi API hoặc sửa đổi mã nếu họ quyết định chuyển đổi công nghệ triển khai cơ bản. Bài viết này bao gồm các tính năng Neutron cho hiệu năng NFV (ở trên). 88% người dùng OpenStack đã triển khai Neutron.
 
 Visit http://docs.openstack.org/developer/neutron/
 
-** Neutron “Stadium” subprojects: **Một tập hợp các dự án Neutron chính thức, Stadium bao gồm nhiều dự án liên quan đến NFV và duy trì hỗ trợ cho hầu hết các drivers và plug-ins.
+**Neutron “Stadium” subprojects:** Một tập hợp các dự án Neutron chính thức, Stadium bao gồm nhiều dự án liên quan đến NFV và duy trì hỗ trợ cho hầu hết các drivers và plug-ins.
 
-http://governance.openstack.org/reference/projects/neutron.html.
+http://governance.openstack.org/reference/projects/neutron.html
 
 **Senlin:** Một dịch vụ phân cụm và các thư viện để quản lý các nhóm đối tượng đồng nhất được tiếp xúc bởi các dịch vụ OpenStack khác
 
-Wiki: https://wiki.openstack.org/wiki/Senlin.
+Wiki: https://wiki.openstack.org/wiki/Senlin
+
+### NFV to OpenStack  Requirements Processes
+
+Các yêu cầu của NFV, tương tự như các yêu cầu khác, được giới thiệu theo nhiều cách khác nhau: theo yêu cầu của người dùng, cộng đồng ETSI NFV ISG hoặc OPNFV. Các bảng dưới đây cho thấy các yêu cầu này trở thành bản thiết kế OpenStack, được sử dụng để theo dõi việc thực hiện các tính năng quan trọng.
+
+### OpenStack Users and Ecosystem 
+
+Người dùng OpenStack gửi yêu cầu thông qua OpenStack User Committee hoặc Operators Working Group. Yêu cầu cũng được khởi xướng bởi hệ sinh thái OpenStack, thường dựa trên các mối quan hệ và yêu cầu đề xuất (RFPs) từ các khách hàng viễn thông. Những yêu cầu này thường được yêu cầu từ ETSI NFV hoặc OPNFV, khi các công ty yêu cầu bắt đầu triển khai khung tiêu chuẩn. Dưới đây là ví dụ về các yêu cầu về hệ thống viễn thông và hệ sinh thái được gửi:
+
+|DESCRIPTION | SUBMITTED BY | OPENSTACK PROJECT | BLUEPRINT | STATUS |
+|------------|--------------|-------------------|-----------|--------|
+|Hỗ trợ multiple IPv6 prefixes và địa chỉ cho mạng IPv6 | Comcast | Neutron | https://blueprints.launchpad.net/neutron/+spec/multiple-ipv6-prefixes | Complete |
+|Processor core affinity for a VM | Verizon | Nova | https://blueprints.launchpad.net/nova/+spec/virt-dedicated-cpus-placementpolicy | Pending approval |
+|Resource reservation | NTT | * Nova Reservation API | https://wiki.openstack.org/wiki/Blueprintnova-planned-resource-reservation-api | Passed to Blazar project |
+| | |* Blazar | https://blueprints.launchpad.net/blazar | Varies |
+|NUMA topology awareness | Red Hat and Intel on behalf of Telefónica | Nova | https://blueprints.launchpad.net/nova/+spec/virt-driver-vcpu-topology | Complete |
+|VLAN-aware VMs and support Neutron trunk ports in Nova | Ericsson | Neutron and Nova | https://blueprints.launchpad.net/neutron/+spec/vlan-aware-vms | Started planed for Mitaka|
+|Support failure correlation | Huawei | Monasca | https://blueprints.launchpad.net/monasca/+spec/suppot-failure-correlation | New |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
