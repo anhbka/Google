@@ -384,7 +384,7 @@ Có nhiều cách để tham gia, dựa trên khả năng và sở thích của 
 |Actual use case details| Architects | Review videos from the recent OpenStack summits |
 |Networking, general discussions| Anyone | Join a nearby OpenStack User Group, attend meetups, or talk to your local OpenStack Ambassador|
 |Contributing to any OpenStack projects | Potential contributors and developers | How to Contribute wiki |
-|Technical NFV information| OpenStack enthusiasts and developers| |#openstack-nfv IRC channel on irc. freenode.net.|
+|Technical NFV information| OpenStack enthusiasts and developers| openstack-nfv IRC channel on irc. freenode.net.|
 |Technical OPNFV information | OPNFV project members and interested parties | OPNFV OpenStack Community wiki |
 
 ### Summary
