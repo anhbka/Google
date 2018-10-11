@@ -255,29 +255,144 @@ Các yêu cầu của NFV, tương tự như các yêu cầu khác, được gi�
 
 ### OpenStack Users and Ecosystem 
 
-Người dùng OpenStack gửi yêu cầu thông qua OpenStack User Committee hoặc Operators Working Group. Yêu cầu cũng được khởi xướng bởi hệ sinh thái OpenStack, thường dựa trên các mối quan hệ và yêu cầu đề xuất (RFPs) từ các khách hàng viễn thông. Những yêu cầu này thường được yêu cầu từ ETSI NFV hoặc OPNFV, khi các công ty yêu cầu bắt đầu triển khai khung tiêu chuẩn. Dưới đây là ví dụ về các yêu cầu về hệ thống viễn thông và hệ sinh thái được gửi:
+Người dùng OpenStack gửi yêu cầu thông qua OpenStack User Committee hoặc Operators Working Group. Yêu cầu cũng được khởi xướng bởi hệ sinh thái OpenStack, thường dựa trên các mối quan hệ và yêu cầu đề xuất (RFPs) từ các khách hàng viễn thông. Những yêu cầu này thường được yêu cầu từ ETSI NFV hoặc OPNFV, khi các công ty yêu cầu bắt đầu triển khai khung tiêu chuẩn. Dưới đây là ví dụ về các yêu cầu về hệ thống viễn thông và hệ sinh thái được yêu cầu:
 
 |DESCRIPTION | SUBMITTED BY | OPENSTACK PROJECT | BLUEPRINT | STATUS |
 |------------|--------------|-------------------|-----------|--------|
 |Hỗ trợ multiple IPv6 prefixes và địa chỉ cho mạng IPv6 | Comcast | Neutron | https://blueprints.launchpad.net/neutron/+spec/multiple-ipv6-prefixes | Complete |
 |Processor core affinity for a VM | Verizon | Nova | https://blueprints.launchpad.net/nova/+spec/virt-dedicated-cpus-placementpolicy | Pending approval |
 |Resource reservation | NTT | * Nova Reservation API | https://wiki.openstack.org/wiki/Blueprintnova-planned-resource-reservation-api | Passed to Blazar project |
-| | |* Blazar | https://blueprints.launchpad.net/blazar | Varies |
+| | | * Blazar | https://blueprints.launchpad.net/blazar | Varies |
 |NUMA topology awareness | Red Hat and Intel on behalf of Telefónica | Nova | https://blueprints.launchpad.net/nova/+spec/virt-driver-vcpu-topology | Complete |
 |VLAN-aware VMs and support Neutron trunk ports in Nova | Ericsson | Neutron and Nova | https://blueprints.launchpad.net/neutron/+spec/vlan-aware-vms | Started planed for Mitaka|
 |Support failure correlation | Huawei | Monasca | https://blueprints.launchpad.net/monasca/+spec/suppot-failure-correlation | New |
 
+### ETSI NFV ISG 
+
+Nhóm ETSI NFV Industry Specification Group (ISG) đã gửi yêu cầu chính thức cho Openstack trong năm 2014, từ đó các quy trình được mở rộng hơn,phát triển các bản dự thảo đặc điểm kĩ thuật và các khoảng trống để xem xét một cách công khai. Các tính năng được thiết kế thêm và kiến trúc Openstack khởi tạo và phát triển các project. Dưới đây là ví dụ về cách các yêu cầu ETSI được tích hợp vào các quy trình thiết kế mở của OpenStack:
+
+|OPNFV SUBMITTING PROJECT |  DESCRIPTION | OPENSTACK PROJECT | OPENSTACK BLUEPRINT | STATUS (AS OF JAN. 2016) |
+|-------------------------|--------------|-------------------|---------------------|--------------------------|
+|Doctor|Change the state of compute service "down" immediately|Nova|https://blueprints.launchpad.net/nova/+spec/mark-host-down| Complete |
+|Doctor|Multiple blueprints for anomaly detection and sensor monitoring|Monasca|https://blueprints.launchpad.net/monasca/|Varies|
+|Promise|Implement support of volume reservation|Blazar|https://blueprints.launchpad.net/blazar/+spec/basic-volume-plugin|Approved, under evaluation|
+|Multisite|Expose quiesce/unquiesce API|Nova|https://blueprints.launchpad.net/nova/+spec/expose-quiesce-unquiesce-api|In progress for Mitaka|
+|Copper|Multiple blueprints for eventdriven policy engine|Congress|https://blueprints.launchpad.net/congress/|Varies|
+|ONOS|Add a Neutron/ML2 plugin for ONOS|Neutron|https://blueprints.launchpad.net/neutron/+spec/onos-neutron-interaction|Complete|
+
+### Production Ready in 2016
+
+OpenStack cho NFV sẽ phát hành production sẵn sàng vào năm 2016 dựa trên các bản thiết kế phát triển của các nhà mạng viễn thông , các yêu cầu về OPNFV và ETSI NFV. Có nói rằng, các công ty truyền thông lớn nhất thế giới và các nhà khai thác mạng doanh nghiệp đang triển khai NFV với OpenStack ngày hôm nay vì những lợi ích hấp dẫn. Dưới đây là một vài ví dụ. Những công ty khác bao gồm China Mobile, Telus Communications, Telecom Italia, Wells Fargo và Telefónica
+
+### AT&T 
+
+Trong tám năm qua, lưu lượng dữ liệu của nhà mạng AT&T đã tăng lên đáng kinh ngạc 100.000%, được tăng lên chủ yếu bằng video. Việc duy trì bằng cách sử dụng các bộ định tuyến phức tạp, phức tạp hơn, thiết bị chuyển mạch và các thiết bị có kích thước theo chiều dọc khác không khả thi trong thời gian lâu hơn — hiệu suất, không hiệu quả và chi phí là những vấn đề lớn.
+
+Mạng thế hệ tiếp theo của nhà mạng AT&T’s mô phỏng chức năng của phần cứng phức tạp với phần mềm chạy trên phần cứng tiêu chuẩn. Được hỗ trợ bởi các công nghệ SDN và NFV, AT&T có thể tăng dung lượng nhanh hơn và đẩy mạnh nâng cấp với tốc độ của Internet.
+
+John Donovan, phó giám đốc điều hành công nghệ và mạng lưới của công ty, cho biết hiện tại có hàng triệu thuê bao không dây AT&T kết nối với các dịch vụ mạng ảo - nhiều người sẽ dựa vào AT&T Integrated Cloud (AIC), dựa trên OpenStack. Các công cụ nội bộ của AT&T và các ứng dụng hướng đến khách hàng chia sẻ cùng một mã trong cloud. OpenStack là dự án quan trọng nhất của các dự án SDN đối với các yêu cầu hiện tại của AT&T và công ty cũng đang đóng góp cho OpenNFV, OpenDaylight và ONOS.
+
+AT&T đang có kế hoạch thực hiện một cơ sở hạ tầng chung cho tất cả các VNF, và các VNF đầu tiên đang trong giai đoạn production với rất nhiều người sẽ sớm làm theo. Đến năm 2020, AT&T có kế hoạch ảo hóa và kiểm soát hơn 75% mạng của mình bằng cách sử dụng kiến trúc phần mềm mới này để đáp ứng nhu cầu ngày càng tăng của người dùng dữ liệu và video.
+
+### Verizon
+
+Lượng lưu lượng truy cập của Verizon đang bùng nổ, thường được thúc đẩy bởi nhu cầu về dịch vụ video và cloud. Trái ngược với niềm tin phổ biến, mạng tự cung cấp ROI thấp vì mạng của nhà cung cấp dịch vụ được xây dựng để sử dụng cao điểm và do đó, phần lớn thời gian được dự báo quá mức.
+
+Verizon đang quan tâm tới NFV một cách nghiêm túc, coi nó như một cách để xây dựng sự linh hoạt của mạng chi phí thấp hơn mà không cần nhân viên hỗ trợ cho các chức năng mạng độc quyền. Nó đang xây dựng dựa trên nền tảng OpenStack phổ biến trên toàn công ty để chạy các chức năng mạng ảo của VNF, cũng như các ứng dụng nội bộ khác. 
+
+Verizon lựa chọn OpenStack bởi vì: 
+
++ Nó cung cấp sự thực tế của một VIM (Virtual Infrastructure Manager)
+
++ Một số lượng lớn các nhà cung cấp đang chuyển đổi và phát triển các ứng dụng (VNF) dựa vào OpenStack
+
++ Các nhà tích hợp đã phát triển chuyên môn triển khai cần thiết bằng cách sử dụng OpenStack
+
++ OpenStack là một môi trường phổ biến làm giảm sự phụ thuộc của nhà cung cấp
+
++ Các thành phần OpenStack đang được điều chỉnh theo nhu cầu của nhà cung cấp dịch vụ, một xu hướng cần thiết cho những nỗ lực liên tục của Verizon
+
++ Các bản sửa lỗi có thể được đẩy lên upstream để các bản vá lỗi không phải được trang bị thêm nhiều lần, vì vậy Verizon có thể tập trung vào các sáng chế.
+
++ Lưu ý rằng phòng thí nghiệm thử nghiệm của Verizon được xây dựng trên bản Kilo, một bản phát hành đằng sau bản phát hành Liberty hiện tại. Verizon thừa nhận tất cả những cải tiến mà họ có thể tận dụng trong các lĩnh vực sẵn sàng cao, hỗ trợ SR-IOV và DPDK, NUMA memory and scheduling và SSD làm cache.
+
+### NTT Group
+
+NTT Communications là công ty cung cấp giải pháp truyền thông và công nghệ thông tin và viễn thông quốc tế của Nippon Telephone and Telegraph Corporation (NTT), có trụ sở tại Nhật Bản và là công ty truyền thông lớn thứ ba trên thế giới về doanh thu. Nó mong muốn các nền tảng NFV có thể liên kết các dịch vụ NFV giữa các trang web không đồng nhất được phân phối: Mạng lưới nhà cung cấp dịch vụ, các cloud và các trang web của người dùng. NTT Communications đã triển khai một bằng chứng lớn về khái niệm, được xây dựng với cùng kiến trúc và cấu trúc liên kết như là các dịch vụ ISP cloud và backbone thương mại của nó.
+
+NTT Communications lên kế hoạch triển khai các dịch vụ NFV OpenStackbased với VNF cho khách hàng doanh nghiệp của họ, bao gồm các chức năng mạng được quản lý như firewall and load-balancer. Khách hàng có thể sử dụng các tính năng của nhà cung cấp VNF, ví dụ như các rules, vì API gốc của nhà cung cấp sẽ được hiển thị. Khách hàng sẽ có thể thay đổi cấu trúc liên kết mạng của riêng mình bằng cách đính kèm và tách các VNF được quản lý bởi NTT Communications.
+
+Họ đã thử nghiệm triển khai, phối hợp, tương tác để phân tách các trang web phân tán, theo dõi các VNF thương mại: vFirewall, vRouter, vDPI, WAN Acceleration/Optimization, lọc URL và phát hiện và giảm thiểu DDoS. Họ không chỉ thử nghiệm OpenStack như là quản lý cơ sở hạ tầng ảo hóa, mà còn như các thành phần MANO NFV Orchestrator và VNF Manager sử dụng Heat và các dự án giai đoạn đầu Tacker và Mistral. Họ cũng đã thử nghiệm các sản phẩm MANO thương mại. Các kết luận về MANO là các giải pháp thương mại khó sử dụng hoàn toàn và giới thiệu các vấn đề về khóa và linh hoạt của nhà cung cấp. Ngược lại, các ưu điểm của OpenStack là tính mở, tính linh hoạt và khả năng tương tác của các VNF.
+
+NTT Group đã giành được giải thưởng OpenStack Superuser một phần do thử nghiệm NFV chuyên sâu, xác định các công việc cần cải thiện, gửi yêu cầu và bản thiết kế của người dùng và đóng góp upstream để lấp đầy những khoảng trống này (xem bảng yêu cầu được gửi và giải quyết bởi các dịch vụ viễn thông OpenStack) phần trước). Các video này có sẵn để biết thêm chi tiết về NFV PoC của NTT Communications và các triển khai sản xuất khác của OpenStack:
+
++ NTT’s Journey with OpenStack: https://www.youtube.com/watch?v=Cu-MF8k7G_A 
+
++ NTT Communications: NFV Service Federation Across Heterogenous Sites: https://youtu.be/IsqwpsIERys 
+
++ NTT Communications: Enhancement of OpenStack Networking for Carrier Cloud Platform: https://www.youtube.com/ watch?v=u1VKXUO0LcE 
+
++ Gohan: An Open Source Service Development Engine for SDN/NFV Orchestration: https://www.youtube.com/watch?v=CEkhGUxD2oM 
+
++ Delivering an End-to-End Automated and Carrier Class NFV (Network Functions Virtualization) Use Case: https://www.youtube.com/watch?v=uwX27wsWPww
+
+### Deutsche Telekom
+
+Deutsche Telekom (DT) đang tìm hiểu và triển khai OpenStack làm nền tảng tối ưu cho NFV. DT hiểu sự cần thiết phải tránh các phần cứng chuyên dụng đã bị lỗi thời bởi các dịch vụ mô hình mới. NFV cho phép DT triển khai các chức năng mạng ảo và mở rộng chúng một cách nhanh chóng mà không cần đầu tư mới vào phần cứng. Deutsche Telekom đang phát triển NFV trong production. Vào tháng 3 năm 2015, nó đã công bố khối lượng công việc NFV production đầu tiên của mình đang chạy OpenStack, một dịch vụ cloud VPN  có sẵn ở Croatia, Slovakia và Hungary. Deutsche Telekom hỗ trợ OpenStack 100%, và đóng góp các yêu cầu và code để giúp thúc đẩy các tính năng của NFV nhanh hơn.
+
+### SK Telecom
+
+SK Telecom, nhà cung cấp dịch vụ không dây lớn nhất Hàn Quốc, đang hướng tới tầm nhìn của Giám đốc Công nghệ của Tiến sĩ Alex Jinsung Choi về cơ sở hạ tầng viễn thông IT, để vận hành tất cả các chức năng mạng viễn thông trên lõi điện toán đám mây trong phần mềm được định nghĩa của họ trung tâm dữ liệu. Khi hoàn tất, tất cả các thành phần trong mạng lõi trong trung tâm dữ liệu và các trung tâm hoạt động mạng cục bộ sẽ chạy như các chức năng mạng ảo hóa trong cơ sở hạ tầng OpenStack cloud.
+
+Hiện tại, SKT đang tập trung vào việc ảo hóa các chức năng mạng viễn thông truyền thống như IMS và EPC cho quy mô lớn và kiểm soát bùng nổ lưu lượng dịch vụ. Các VNF này sẽ được sử dụng để cung cấp các dịch vụ viễn thông đa phương tiện dành riêng cho khách hàng, chuyên dụng với chuỗi dịch vụ. Các VNF cũng sẽ được sử dụng để nâng cao chất lượng dịch vụ và độ tin cậy với quản lý tài nguyên VNF và kiểm soát cân bằng tải.
+
+Trung tâm SKT’s Network R&D Center của SKT đã thành công trong việc triển khai các bộ phận của các dịch vụ IMS hoạt động như vIMS trong môi trường hoạt động thương mại của nó với OpenStack và hiện đang vận hành chúng thành công. Nó cũng sẽ thương mại hóa nhiều phần của dịch vụ IMS cho vIMS sớm và đưa nó vào production. Tiếp theo là vEPC. Trung tâm R&D hội tụ mạng-CNTT của công ty đang thiết lập cơ sở hạ tầng NFV cơ sở với OpenStack như một VIM và NFVO tiên tiến với các điều khiển VNF tiên tiến.
+
+SK Telecom hy vọng sẽ nhận được những lợi ích từ NFV khi sử dụng OpenStack:
+
++ Giảm thời gian downtime và chi phí và cải thiện việc sử dụng mạng bằng cách sử dụng tự động hóa
+
++ Tạo thêm cơ hội kinh doanh với cơ sở hạ tầng có thể lập trình phát triển linh hoạt
+
++ Phát triển đa dạng hơn, mở cho công ty các tùy chọn kinh doanh và công nghệ khác nhau.
+
+### Bloomberg LP 
+
+Viễn thông không phải là tổ chức duy nhất được hưởng lợi từ NFV. Ngành dịch vụ tài chính đang chứng minh sự liên quan của NFV đối với các doanh nghiệp lớn. Bloomberg đã và đang sử dụng OpenStack trong hơn ba năm cung cấp dịch vụ tự phục vụ và giao hàng nhanh chóng cho hơn 3.500 nhà phát triển. Bloomberg đang triển khai SDN và NFV để cho phép lập trình mạng và giảm chi phí.
+
+Các tính năng của OpenStack SDN và NFV cho phép mọi máy tính tham gia vào việc mở rộng mạng. Ngày nay, Bloomberg đã triển khai DNS trong phần mềm, Firewall-as-a-Service và Load Balancing-as-a-Service, với nhiều dịch vụ hơn nữa. Deep Packet Inspection (DPI) là một trong nhiều thiết bị vật lý sẽ được thay thế và được ảo hóa bằng phần mềm NFV. Các thiết bị khác bao gồm thiết bị Customer Premise Equipment  (CPE), CDNs, WAN acceleration, Network Address Translation (NAT), Tester/Quality of Experience monitors, Provider Edge (PE) routers (các mức này ở cấp khu vực, ví dụ: Nhật Bản) và hơn thế nữa.
 
 
+Ngoài những lợi ích mà người khác đã thiết lập, Bloomberg có một vài quan sát độc đáo:
+
++ Các máy chủ khác chạy các chức năng mạng yêu cầu quản lý, nhưng không phải chuyên gia cho từng thiết bị vật lý cụ thể.
+
++ Tự động hóa tiếp tục làm giảm yêu cầu của người vận hành.
+
++ Trong ngành thị trường tài chính, một lợi thế nhanh chóng cụ thể là mạng hiện đại cho phép Bloomberg đưa ra quyết định ứng dụng dựa trên kiểm tra trong gói với các giao thức ứng dụng, chẳng hạn như FIX, một giao thức dữ liệu thị trường.
+
+### Làm thế nào để tham gia
+
+Có nhiều cách để tham gia, dựa trên khả năng và sở thích của bạn khi đóng góp.
+
+|NEED | AUDIENCE | APPROACH |
+|-----|----------|----------|
+|Strategic level involvement| Users or potential users| Join the User Committee list|
+| Articles, interviews and news| Anyone | Read OpenStack Superuser publication|
+|Operational insight | Operators and admins | Join the Operators List |
+|Specific vendor direction | Anyone | Engage with your vendors for roadmap, tested and verified offerings |
+|Actual use case details| Architects | Review videos from the recent OpenStack summits |
+|Networking, general discussions| Anyone | Join a nearby OpenStack User Group, attend meetups, or talk to your local OpenStack Ambassador|
+|Contributing to any OpenStack projects | Potential contributors and developers | How to Contribute wiki |
+|Technical NFV information| OpenStack enthusiasts and developers| |#openstack-nfv IRC channel on irc. freenode.net.|
+|Technical OPNFV information | OPNFV project members and interested parties | OPNFV OpenStack Community wiki |
+
+### Summary
 
 
+Theo chỉ định của các công ty viễn thông lớn, ETSI NFV, OPNFV và các nhà cung cấp mạng doanh nghiệp lớn, OpenStack là cơ sở hạ tầng phù hợp nhất cho việc triển khai NFV. Với sự hỗ trợ, yêu cầu và sự cộng tác cộng đồng từ tất cả các nguồn có liên quan, và bản chất nguồn mở của nó, sự đổi mới nhanh chóng liên tục cho người dùng NFV được đảm bảo.
 
-
-
-
-
-
-
+Có rất nhiều cách để đóng góp cho OpenStack. Cho dù bạn chọn triển khai giải pháp dựa trên khung OPNFV, giải pháp của nhà cung cấp hay xây dựng nó dựa trên đặc tả kỹ thuật của ETSI NFV, OpenStack là trung tâm của hầu hết các dịch vụ. OpenStack được sự hỗ trợ của hơn 550 công ty, nhiều công ty đang tích hợp OpenStack vào các giải pháp NFV của họ. Truy cập chúng tại https://www.openstack.org/marketplace/ or at https://www.openstack.org/foundation/companies/.
 
 
 
