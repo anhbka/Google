@@ -14,7 +14,7 @@ Và cho đến khi GPU ảo – vGPU (virtual GPU) – xuất hiện.
 
 * Vậy, GPU làm gì?
 
-<img src="/img/3.png">
+<img src="/img/2.png">
 
 
 * Một đơn vị xử lý đồ họa có hàng ngàn lõi máy tính để xử lý công việc song song. Các ứng dụng 3D, video và hiển thị hình ảnh là những ứng dụng đòi hỏi cao tính năng xử lý song song.
