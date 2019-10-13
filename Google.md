@@ -49,7 +49,13 @@ B3: Đổi tên mà bạn mong muốn và dán đoạn mã javascript ở trên 
 <img src="/img/5.jpg">
 
 
+### Thuật toán google đã thay đổi nên cần dùng cách này.
 
+- Ctrl + U tìm đến link có từ `viewerng`
+
+- Paste link vào đây `https://r12a.github.io/app-conversion/` click convert 
+
+- Open link ở ô Character sau đó tìm link dạng `https://doc-0s-5k-apps-viewer.googleusercontent.com/viewer/secure/pdf/9ntm91lgck0jhplteddaakrhuvvov99d/p0h5ed89hp35sivu7en1haabsbghjprq/1570963575000/drive/15111333470000695821/ACFrOgDW4kZ_W_HgNN2VWPdzVd9kCk6e99xpmma2kwy1HABJM60eLmJorchioNCPV39-Nao3y8yOJmSOlaU-lROb8PLOJ1Wkl3McluIt5qnvGzvAaHH5__UyG9EeJLA=` và open link. Enjoy !
 
 
 
