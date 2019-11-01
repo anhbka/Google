@@ -57,6 +57,17 @@ B3: Đổi tên mà bạn mong muốn và dán đoạn mã javascript ở trên 
 
 - Open link ở ô Character sau đó tìm link dạng `https://doc-0s-5k-apps-viewer.googleusercontent.com/viewer/secure/pdf/9ntm91lgck0jhplteddaakrhuvvov99d/p0h5ed89hp35sivu7en1haabsbghjprq/1570963575000/drive/15111333470000695821/ACFrOgDW4kZ_W_HgNN2VWPdzVd9kCk6e99xpmma2kwy1HABJM60eLmJorchioNCPV39-Nao3y8yOJmSOlaU-lROb8PLOJ1Wkl3McluIt5qnvGzvAaHH5__UyG9EeJLA=` và open link. Enjoy !
 
+### Download file google báo antivirus
+
+`https://drive.google.com/file/d/1anuzyb7GREvGm6SLeN8ob8p8nAuvrflr/view?usp=sharing`
+
+ID: `1anuzyb7GREvGm6SLeN8ob8p8nAuvrflr`
+
+Paste ID to xxx
+`https://drive.google.com/uc?export=download&confirm=no_antivirus&id=XXX`
+
+Note: `https://drive.google.com/uc?export=download&id=`
+
 
 
 
