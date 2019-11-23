@@ -6,7 +6,7 @@
 
 <img src="/img/14.jpg">
 
-- Dùng phím `F12` hoặc `Ctrl + Shirf + I`
+- Dùng phím `F12` hoặc `Ctrl + Shift + I`
 
 <img src="/img/15.jpg">
 
