@@ -4,23 +4,23 @@
 
 - Mở link cần tải:
 
-<img src="/img/14.jpg>
+<img src="/img/14.jpg">
 
 - Dùng phím `F12` hoặc `Ctrl + Shirf + I`
 
-<img src="/img/15.jpg>
+<img src="/img/15.jpg">
 
 - Click vào tab Network sau đó F5 lại website và gõ từ khóa `upload` vào ô filter:
 
-<img src="/img/16.jpg>
+<img src="/img/16.jpg">
 
 - Khi đó sẽ hiện ra 1 đường dẫn như trong hình, click open link và `Ctrl + F` gõ từ khóa `pdf` tiếp tục open link như trong hình sau:
 
-<img src="/img/17.jpg>
+<img src="/img/17.jpg">
 
 - Enjoy 
 
-<img src="/img/18.jpg>
+<img src="/img/18.jpg">
 
 * Cách 2
 - Ctrl + U tìm đến link có từ `viewerng`
